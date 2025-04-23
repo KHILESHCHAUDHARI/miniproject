@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MahaXplore - Maharashtra Districts</title>
+  <style>
+    body {
+      font-family: 'Playfair Display', serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #2d66c2;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .title-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.title {
+  margin: 0;
+  font-size: 2em;
+  color: white; /* Or any color you like */
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.9em;
+  color: white; /* Lighter or muted tone */
+  font-style: italic;
+}
+
+    .login-button {
+      background-color: white;
+      color: #007bff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .login-button:hover {
+      background-color: #ffeb3b;
+      color: black;
+    }
+
+    .tourism-strip {
+      width: 100%;
+      height: 50px;
+      background-image: url("porgi.avif");
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2mm;
+      font-family: "magneto", sans-serif;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .container {
+      width: 95%;
+      max-width: 1400px;
+      margin: 30px auto;
+    }
+
+    .region-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .region-column h3 {
+      font-size: 1.5em;
+      margin-bottom: 15px;
+      color: #007bff;
+    }
+
+    .district-button {
+      background-color: #0099ff;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+      font-size: 14px;
+      font-family: 'Comic sans MS', sans-serif;
+      color: white;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .district-button:hover {
+      background-color: #d0d0d0;
+      color: black;
+
+    }
+    .travel-images {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .travel-images h2 {
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .travel-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .travel-item:nth-child(even) {
+            flex-direction: row-reverse; /* Alternate rows */
+        }
+
+        .travel-item img {
+            width: 750px; /* A6 width */
+            height: 350px; /* A6 height */
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 0 20px;
+        }
+
+        .travel-item h3 {
+            font-weight: bold;
+            color: black;
+            flex: 1; /* Text takes available space */
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+    footer {
+      background-color:  #2d66c2;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+
+    <img src="./imges/logo.jpg" alt="Aeroplane Logo" style="width: 35mm; height: 30mm;">
+    
+    <div class="title-container">
+      <h1 class="title">M a h a X p l o r e</h1>
+      <p class="tagline">"Feel the Pulse of Maharashtra"</p>
+    </div>
+    
+    <button class="login-button" id="loginButton" onclick="redirectToLogin()">Login</button>
+  
+</header>
+
+<script>
+  function redirectToLogin() {
+    window.location.href = "login.html";
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const fullName = sessionStorage.getItem("fullName");
+    if (fullName) {
+      const loginBtn = document.getElementById("loginButton");
+      loginBtn.textContent = "Hi " + fullName;
+      loginBtn.style.cursor = "default";
+      loginBtn.onclick = null;
+    }
+  });
+</script>
+<div ><img src="./imges/main.jpg" style="height:300px; width:100% ;"/></div>
+
+<div class="tourism-strip"></div>
+
+<div class="container">
+  <h2 style="text-align: center; font-size: 2em;">Experience the Beauty of Maharashtra</h2>
+
+  <div class="region-grid">
+    <div class="region-column">
+      <h3>Konkan</h3>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='mumbai.html'">Mumbai</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);">Thane</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" >Palghar</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);">Ratnagiri</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='sindhudurg.html'">Sindhudurg</button>
+    </div>
+
+    <div class="region-column">
+      <h3>Desh</h3>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='pune.html'">Pune</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='satara.html'">Satara</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='sangli.html'">Sangli</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='solapur.html'">Solapur</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='kolhapur.html'">Kolhapur</button>
+    </div>
+
+    <div class="region-column">
+      <h3>Marathwada</h3>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='beed.html'">Beed</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);"onclick="location.href='jalna.html'">Jalna</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='osmanabad.html'">Osmanabad</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='parbhani.html'">Parbhani</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='hingoli.html'">Hingoli</button>
+
+    </div>
+
+    <div class="region-column">
+      <h3>Nagpur region</h3>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='nagpur.html'">Nagpur</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='wardha.html'">Wardha</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='yavatmal.html'">Yavatmal</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='amravati.html'">Amravati</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='akola.html'">Akola</button>
+
+    </div>
+
+    <div class="region-column">
+      <h3>Khandesh</h3>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='nashik.html'">Nashik</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='dhule.html'">Dhule</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='aurangabad.html'">Aurangabad</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='jalgaon.html'">Jalgaon</button>
+      <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='ahmednagar.html'">Ahmednagar</button>
+    </div>
+
+    <div class="region-column">
+        <h3>Vidarbha</h3>
+        <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='buldhana.html'">Buldhana</button>
+        <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='washim.html'">Washim</button>
+        <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='gondia.html'">Gondia</button>
+        <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='Chandrapur.html'">Chandrapur</button>
+        <button class="district-button" style="background-color: rgb(45, 174, 255);" onclick="location.href='bhandara.html'">Bhandara</button>
+    </div>
+  </div>
+</div>
+
+<div class="tourism-strip"></div>
+<div class="travel-images">        
+    <h2 style="text-align: center; margin-top: 10px; margin-bottom: 10px; font-size: 2em; font-weight: bold;">Famous places in Maharastra</h2>
+    <div class="tourism-strip"></div>
+    <div class="travel-grid">
+        <div class="travel-item">
+            <img src="https://pohcdn.com/guide/sites/default/files/styles/paragraph__hero_banner__hb_image__1880bp/public/hero_banner/Gateway-to-India_0.jpg" alt="Gateway of India">
+            <h3>Gateway of India, Mumbai</h3>
+        </div>
+        <div class="travel-item">
+            <img src="https://aurangabadtourism.in/images/places-to-visit/header/ellora-caves-aurangabad-tourism-entry-fee-timings-holidays-reviews-header.jpg" alt="Ajanta Caves">
+            <h3>Ajanta Caves, Aurangabad</h3>
+        </div>
+        <div class="travel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfaqUueTiEWHMnnWhqyNg8wZ3XbHwfPre_OA&s.jpg" alt="Mahabaleshwar Hills">
+            <h3>Mahabaleshwar, Satara</h3>
+        </div>
+        <div class="travel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGF8bmKal5bOu0rjlyVJF_XUBoyyZOtiqc-Q&s.jpg" alt="Raigad Fort">
+            <h3>Raigad Fort, Raigad</h3>
+        </div>
+        <div class="travel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz-S0MvCVmib-uwxffdVZeFC2lTRKWLuiC2y4HdiqqC54RqM9AuXXuzz5ngcXYci533ow&usqp=CAU.jpg" alt="Tadoba National Park">
+            <h3>Tadoba National Park, Chandrapur</h3>
+        </div>
+        <div class="travel-item">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSquD5kEjIkMd7eYwu3XkGTLoEhKDq9XaINJDgRLH5VWJdum9RfI6svk2UJ9fR6rfQSrEw&usqp=CAU.jpg" alt="Sindhudurg Fort">
+            <h3>Sindhudurg Fort, Sindhudurg</h3>
+        </div>
+    </div>
+</div>
+</div>
+
+<footer>
+  <p>&copy; 2025 MahaXplore. All rights reserved.</p>
+</footer>
+
+</body>
+</html> 
